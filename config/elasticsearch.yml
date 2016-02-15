@@ -138,7 +138,6 @@ bootstrap.mlockall: true
 #
 # network.bind_host: 192.168.0.1
 network.bind_host: "0"
-network.bind_host: "::"
 
 # Set the address other nodes will use to communicate with this node. If not
 # set, it is automatically derived. It must point to an actual IP address.
