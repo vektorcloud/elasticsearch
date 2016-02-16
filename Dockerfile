@@ -39,25 +39,23 @@ ENV JAVA_HOME /opt/jdk
 ENV PATH ${PATH}:${JAVA_HOME}/bin
 
 # Install Elasticsearch
-ENV ES_VERSION 2.0.1
+ENV ES_VERSION 2.2.0
 ENV ES_URL https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-${ES_VERSION}.tar.gz 
 
 RUN adduser -D elasticsearch && \
     cd /tmp/ && \
     curl -Lskj $ES_URL | tar xzf - && \
     mv /tmp/elasticsearch-${ES_VERSION} /opt/elasticsearch && \
-	  rm -f $(find /opt/elasticsearch -iname '*.exe' -or -iname '*.bat') && \
+    mkdir -p /opt/elasticsearch/data /var/log/elasticsearch && \
+    chown -Rf elasticsearch. /opt/elasticsearch /var/log/elasticsearch && \
+    rm -f $(find /opt/elasticsearch -iname '*.exe' -or -iname '*.bat') && \
     rm -rf /var/cache/apk/* /tmp/* /var/tmp/*
 
 COPY config/ /opt/elasticsearch/config
 COPY entrypoint.sh /entrypoint.sh
 
-ENV ES_HEAP_SIZE auto
-
-RUN mkdir -p /opt/elasticsearch/data /var/log/elasticsearch && \
-    chown -Rf elasticsearch. /opt/elasticsearch /var/log/elasticsearch
-
-VOLUME /opt/elasticsearch/data
 EXPOSE 9200 9300
 USER elasticsearch
+VOLUME /opt/elasticsearch/data
+
 CMD /bin/bash /entrypoint.sh
