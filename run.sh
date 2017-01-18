@@ -1,5 +1,4 @@
-#!/bin/sh
-set -e
+#!/bin/bash -e
 
 [ -z "$ES_HEAP_SIZE" ] && {
   total_mem=$(cat /sys/fs/cgroup/memory/memory.limit_in_bytes)
