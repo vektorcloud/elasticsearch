@@ -13,7 +13,7 @@ RUN apk add --no-cache bash bc && \
     find /opt/elasticsearch -iname '*.exe' -delete -or -iname '*.bat' -delete
 
 COPY run.sh /run.sh
-COPY config/ /opt/elasticsearch/config
+COPY elasticsearch.yml /opt/elasticsearch/config/elasticsearch.yml
 
 USER elastic
 EXPOSE 9200 9300
