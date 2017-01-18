@@ -10,6 +10,6 @@ echo "Starting Elasticsearch..."
 echo "Heap Size: $ES_HEAP_SIZE"
 
 exec /opt/elasticsearch/bin/elasticsearch -Des.logger.level=$ELASTICSEARCH_LOG_LEVEL \
-                                          -Des.default.path.logs=/var/log/elasticsearch \
+                                          -Des.default.path.logs=${LOG_DIR} \
                                           -Djava.net.preferIPv4Stack=true \
                                           -Djava.net.preferIPv4Addresses
