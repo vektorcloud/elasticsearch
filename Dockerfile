@@ -16,7 +16,6 @@ RUN apk add --no-cache bash bc && \
 COPY run.sh /run.sh
 COPY elasticsearch.yml /elastic/config/elasticsearch.yml
 
-USER elastic
 EXPOSE 9200 9300
 VOLUME /elastic/data
 

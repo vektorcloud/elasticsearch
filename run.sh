@@ -11,4 +11,4 @@ export ES_JAVA_OPTS+="-Xms${HEAP_SIZE} -Xmx${HEAP_SIZE}"
 echo "Starting Elasticsearch..."
 echo "ES_JAVA_OPTS: $ES_JAVA_OPTS"
 
-exec /elastic/bin/elasticsearch
+exec su elastic -c /elastic/bin/elasticsearch
