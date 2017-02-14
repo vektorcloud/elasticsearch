@@ -1,6 +1,6 @@
 FROM quay.io/vektorcloud/oracle-jre:latest
 
-ENV ES_VERSION 5.1.2
+ENV ES_VERSION 5.2.0
 ENV ES_URL https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-${ES_VERSION}.tar.gz
 
 ENV HEAP_SIZE auto
