@@ -3,12 +3,14 @@ Self-configuring Elasticsearch image build
 
 # Usage
 
-By default, elasticsearch will be started with 70% of the containers memory limit allocated to heap, e.g.:
-```bash
-docker run -d -p 9200:9200 -m512m quay.io/vektorcloud/elasticsearch:5
-```
+By default, elasticsearch will be started with 70% of the containers memory limit allocated to heap. To override this behavior, use the `HEAP_SIZE` variable:
 
-To override this behavior, use the `HEAP_SIZE` variable:
 ```bash
-docker run -d -p 9200:9200 -e HEAP_SIZE=1024m quay.io/vektorcloud/elasticsearch:5
+docker run -d --name=elastic \
+           -p 9200:9200 \
+           -e HEAP_SIZE=1024m \
+           --cap-add IPC_LOCK \
+           --ulimit memlock=-1:-1 \
+           --ulimit nofile=65536:65536 \
+           quay.io/vektorcloud/elasticsearch:5
 ```
