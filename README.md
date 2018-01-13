@@ -1,4 +1,6 @@
 # elasticsearch
+
+![circleci][circleci]
 Self-configuring Elasticsearch image build
 
 # Usage
@@ -14,3 +16,5 @@ docker run -d --name=elastic \
            --ulimit nofile=65536:65536 \
            quay.io/vektorcloud/elasticsearch:5
 ```
+
+[circleci]: https://img.shields.io/circleci/project/github/vektorcloud/elasticsearch.svg "elasticsearch"
