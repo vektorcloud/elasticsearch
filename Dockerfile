@@ -5,7 +5,7 @@ ENV ES_URL https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-${
 
 ENV HEAP_SIZE auto
 
-RUN apk add --no-cache bash bc && \
+RUN apk add --no-cache bash bc coreutils && \
     cd /tmp/ && curl -Lskj $ES_URL | tar xzf - && \
     mv /tmp/elasticsearch-${ES_VERSION} /elastic && \
     mkdir -p /elastic/data /elastic/logs && \
