@@ -14,7 +14,7 @@ docker run -d --name=elastic \
            --cap-add IPC_LOCK \
            --ulimit memlock=-1:-1 \
            --ulimit nofile=65536:65536 \
-           quay.io/vektorcloud/elasticsearch:5
+           quay.io/vektorcloud/elasticsearch:6
 ```
 
 [circleci]: https://img.shields.io/circleci/project/github/vektorcloud/elasticsearch.svg "elasticsearch"
