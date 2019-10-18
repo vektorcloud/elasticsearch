@@ -32,4 +32,4 @@ docker run -d --name=elastic \
            quay.io/vektorcloud/elasticsearch:6
 ```
 
-[circleci]: https://img.shields.io/circleci/project/github/vektorcloud/elasticsearch.svg "elasticsearch"
+[circleci]: https://img.shields.io/circleci/build/gh/vektorcloud/elasticsearch?color=1dd6c9&logo=CircleCI&logoColor=1dd6c9&style=for-the-badge "elasticsearch"
