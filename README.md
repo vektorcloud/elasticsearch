@@ -1,6 +1,6 @@
 # elasticsearch
 
-![circleci][circleci]
+[![circleci][circleci]](https://circleci.com/gh/vektorcloud/elasticsearch)
 
 Self-configuring Elasticsearch image build
 
